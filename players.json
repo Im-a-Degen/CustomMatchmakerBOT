@@ -1,38 +1,33 @@
 {
-  "Im a Degen": {
-    "name": "Robby",
+  "Rob": {
     "top": 0,
     "jungle": 0,
     "mid": 0,
     "bot": 0,
     "support": 0
   },
-  "Zaaraus": {
-    "name": "Clom",
+  "Clom": {
     "top": 0,
     "jungle": 0,
     "mid": 0,
     "bot": 0,
     "support": 0
   },
-  "Shwurf": {
-    "name": "Tom",
+  "Tien": {
     "top": 0,
     "jungle": 0,
     "mid": 0,
     "bot": 0,
     "support": 0
   },
-  "Shiggy": {
-    "name": "Sam",
+  "Kasai": {
     "top": 0,
     "jungle": 0,
     "mid": 0,
     "bot": 0,
     "support": 0
   },
-  "Drowningfishes": {
-    "name": "James",
+  "Jake": {
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -40,7 +35,6 @@
     "support": 0
   },
   "Xen Zenith": {
-    "name": "Jake",
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -48,7 +42,6 @@
     "support": 0
   },
   "Krasith": {
-    "name": "Ash",
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -56,7 +49,6 @@
     "support": 0
   },
   "Lamborjhini": {
-    "name": "Tien",
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -64,7 +56,6 @@
     "support": 0
   },
   "Gwft": {
-    "name": "George",
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -72,7 +63,6 @@
     "support": 0
   },
   "Bearcat": {
-    "name": "Nic",
     "top": 0,
     "jungle": 0,
     "mid": 0,
@@ -80,7 +70,6 @@
     "support": 0
   },
   "Azphra": {
-    "name": "Jamie",
     "top": 0,
     "jungle": 0,
     "mid": 0,
