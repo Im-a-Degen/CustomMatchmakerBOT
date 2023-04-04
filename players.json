@@ -1,80 +1,73 @@
 {
   "Rob": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+    "Top": 4,
+    "Jungle": 5,
+    "Mid": 3,
+    "Bot": 4,
+    "Support": 2
   },
   "Clom": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+    "Top": 7,
+    "Jungle": 8,
+    "Mid": 7,
+    "Bot": 6,
+    "Support": 7
   },
   "Tien": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+    "Top": 7,
+    "Jungle": 7,
+    "Mid": 7,
+    "Bot": 9,
+    "Support": 7
   },
   "Kasai": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+    "Top": 4,
+    "Jungle": 6,
+    "Mid": 5,
+    "Bot": 4,
+    "Support": 7
   },
   "Jake": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+    "Top": 7,
+    "Jungle": 5,
+    "Mid": 7,
+    "Bot": 8,
+    "Support": 6
   },
-  "Xen Zenith": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+  "Freddie": {
+    "Top": 7,
+    "Jungle": 6,
+    "Mid": 5,
+    "Bot": 5,
+    "Support": 5
   },
-  "Krasith": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+  "Fishes": {
+    "Top": 7,
+    "Jungle": 7,
+    "Mid": 8,
+    "Bot": 6,
+    "Support": 6
   },
-  "Lamborjhini": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+  "Jamie": {
+    "Top": 6,
+    "Jungle": 7,
+    "Mid": 5,
+    "Bot": 6,
+    "Support": 7
   },
-  "Gwft": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+  "Shiggy": {
+    "Top": 6,
+    "Jungle": 8,
+    "Mid": 7,
+    "Bot": 6,
+    "Support": 6
   },
-  "Bearcat": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
-  },
-  "Azphra": {
-    "top": 0,
-    "jungle": 0,
-    "mid": 0,
-    "bot": 0,
-    "support": 0
+  "Ticker": {
+    "Top": 8,
+    "Jungle": 6,
+    "Mid": 8,
+    "Bot": 5,
+    "Support": 5
   }
 
 }

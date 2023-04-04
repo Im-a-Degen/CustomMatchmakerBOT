@@ -1,5 +1,6 @@
 import discord
 import os
+from sortPlayers import PlayerSorter
 from discord.ext import commands
 
 # Not very secure, but works for this
@@ -16,21 +17,20 @@ role_message = ""
 role_emote = ["<:Top:1091420818552147978>", "<:Jungle:1091420814433321060>", "<:Mid:1091420815582580857>",
               "<:Bot:1091420812201959434>", "<:Support:1091420816392073259>"]
 players_per_role = {
-    "Top": [],
     "Jungle": [],
     "Mid": [],
+    "Support": [],
     "Bot": [],
-    "Support": []
+    "Top": []
 }
-roles_per_player = {}
 
 # Test data with: Rob, Clom, Tien, Kasai, Jake, Freddie, Fishes, Jamie, Shiggy, Ticker
 players_per_role = {
-    "Top": ["Tien", "Rob", "Clom", "Freddie", "Jake", "Fishes", "Jamie"],
     "Jungle": ["Rob", "Kasai", "Clom", "Tien", "Freddie", "Fishes"],
     "Mid": ["Rob", "Kasai", "Clom", "Fishes", "Shiggy"],
-    "Bot": ["Kasai", "Clom", "Jake", "Jamie"],
-    "Support": ["Clom", "Kasai", "Fishes", "Ticker"]
+    "Support": ["Clom", "Kasai", "Fishes", "Ticker"],
+    "Bot": ["Jake", "Jamie", "Rob"],
+    "Top": ["Tien", "Rob", "Clom", "Freddie", "Jake", "Fishes", "Jamie"]
 }
 
 
@@ -44,8 +44,8 @@ async def custom(ctx):
 
 @custom_bot.command()
 async def sort(ctx):
-    global role_message
-    get_updated_message = await ctx.fetch_message(role_message.id)
+    # global role_message
+    # get_updated_message = await ctx.fetch_message(role_message.id)
     # for r in get_updated_message.reactions:
     #     if str(r) == "<:Top:1091420818552147978>":
     #         players_per_role["Top"] = [user.name async for user in r.users()]
@@ -63,14 +63,12 @@ async def sort(ctx):
     #         players_per_role["Support"] = [user.name async for user in r.users()]
     #         players_per_role["Support"].remove(bot_name)
 
-    for k, v in players_per_role.items():
-        for player in v:
-            if player in roles_per_player:
-                roles_per_player[player].append(k)
-            else:
-                roles_per_player[player] = [k]
-    print(players_per_role)
-    print(roles_per_player)
+    sorter = PlayerSorter(players_per_role)
+    sorted_players = sorter.resultant_roles
+    await ctx.send(f"{sorted_players['Top'][0]}<:Top:1091420818552147978>{sorted_players['Top'][1]}\n"
+                   f"{sorted_players['Jungle'][0]}<:Jungle:1091420814433321060>{sorted_players['Jungle'][1]}\n"
+                   f"{sorted_players['Mid'][0]}<:Mid:1091420815582580857>{sorted_players['Mid'][1]}\n"
+                   f"{sorted_players['Bot'][0]}<:Bot:1091420812201959434>{sorted_players['Bot'][1]}\n"
+                   f"{sorted_players['Support'][0]}<:Support:1091420816392073259>{sorted_players['Support'][1]}")
 
 custom_bot.run(key)
-
