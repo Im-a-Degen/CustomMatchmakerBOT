@@ -18,18 +18,18 @@ role_emote = ["<:Top:1091420818552147978>", "<:Jungle:1091420814433321060>", "<:
               "<:Bot:1091420812201959434>", "<:Support:1091420816392073259>"]
 players_per_role = {
     "Jungle": [],
-    "Mid": [],
     "Support": [],
+    "Mid": [],
     "Bot": [],
     "Top": []
 }
 
 # Test data with: Rob, Clom, Tien, Kasai, Jake, Freddie, Fishes, Jamie, Shiggy, Ticker
 players_per_role = {
-    "Jungle": ["Rob", "Kasai", "Clom", "Tien", "Freddie", "Fishes"],
+    "Jungle": ["Rob", "Kasai", "Clom", "Tien", "Freddie"],
     "Mid": ["Rob", "Kasai", "Clom", "Fishes", "Shiggy"],
     "Support": ["Clom", "Kasai", "Fishes", "Ticker"],
-    "Bot": ["Jake", "Jamie", "Rob"],
+    "Bot": ["Jake", "Jamie"],
     "Top": ["Tien", "Rob", "Clom", "Freddie", "Jake", "Fishes", "Jamie"]
 }
 
