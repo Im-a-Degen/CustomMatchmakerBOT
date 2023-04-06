@@ -26,6 +26,8 @@ class PlayerSorter:
             "Support": []
         }
         self.player_info = {}
+        self.error_message = []
+        self.error_detected = False
 
         with open("players.json") as f:
             self.player_info = json.load(f)
@@ -61,17 +63,21 @@ class PlayerSorter:
         while sum((len(v) for v in self.resultant_roles.values())) < 10:
             lowest_role_player = self.find_min_player()
             lowest_player_role = self.find_min_role()
-            # TODO ERRORS RETURN THE CURRENT SORTED ROLES WITH THE OUTSTANDING ROLES TO BE SORTED
             if self.player_role_count[lowest_role_player] == 0:
-                print(f"(Player {lowest_role_player} needs to select more roles)")
-                # TODO RETURN ERROR HERE (Player X needs to select more roles)
+                self.error_detected = True
+                self.error_message.append(f"(Player {lowest_role_player} needs to select more roles)")
+                self.remove_player(lowest_role_player)
             elif self.player_role_count[lowest_role_player] == 1:
                 role = self.roles_per_player[lowest_role_player][0]
                 self.resultant_roles[role].append(lowest_role_player)
                 self.remove_player(lowest_role_player)
 
             elif len(self.resultant_roles[lowest_player_role]) == 1:
-                if self.role_player_count[lowest_player_role] <= 1:
+                if self.role_player_count[lowest_player_role] == 0:
+                    self.error_detected = True
+                    self.error_message.append(f"(Role {lowest_player_role} needs more players)")
+                    self.remove_role(lowest_player_role)
+                elif self.role_player_count[lowest_player_role] <= 1:
                     self.resultant_roles[lowest_player_role].append(self.players_per_role[0])
                     self.remove_player(self.players_per_role[0])
                     self.remove_role(lowest_player_role)
@@ -79,12 +85,20 @@ class PlayerSorter:
                     self.single_role_sort(self.resultant_roles[lowest_player_role][0], lowest_player_role)
             else:
                 if self.role_player_count[lowest_player_role] <= 1:
-                    print(f"(Role {lowest_player_role} needs more players)")
-                    # TODO RETURN ERROR HERE (Role X needs more players)
+                    self.error_detected = True
+                    self.error_message.append(f"(Role {lowest_player_role} needs more players)")
+                    self.remove_role(lowest_player_role)
                 elif self.role_player_count[lowest_player_role] == 2:
                     self.instant_sort(lowest_player_role)
                 elif self.role_player_count[lowest_player_role] > 2:
                     self.player_value_sort(lowest_player_role)
+        if self.error_detected:
+            self.error_output()
+
+    def error_output(self):
+        for k, v in self.resultant_roles.items():
+            while len(v) < 2:
+                self.resultant_roles[k].append("No Player")
 
     def find_min_role(self):
         return min(self.role_player_count, key=self.role_player_count.get)

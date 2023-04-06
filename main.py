@@ -29,7 +29,7 @@ players_per_role = {
     "Jungle": ["Rob", "Kasai", "Clom", "Tien", "Freddie"],
     "Mid": ["Rob", "Kasai", "Clom", "Fishes", "Shiggy"],
     "Support": ["Clom", "Kasai", "Fishes", "Ticker"],
-    "Bot": ["Jake", "Jamie"],
+    "Bot": ["Jake"],
     "Top": ["Tien", "Rob", "Clom", "Freddie", "Jake", "Fishes", "Jamie"]
 }
 
@@ -70,5 +70,9 @@ async def sort(ctx):
                    f"{sorted_players['Mid'][0]}<:Mid:1091420815582580857>{sorted_players['Mid'][1]}\n"
                    f"{sorted_players['Bot'][0]}<:Bot:1091420812201959434>{sorted_players['Bot'][1]}\n"
                    f"{sorted_players['Support'][0]}<:Support:1091420816392073259>{sorted_players['Support'][1]}")
+    if len(sorter.error_message) != 0:
+        await ctx.send("Failed to sort players:")
+        for item in sorter.error_message:
+            await ctx.send(item)
 
 custom_bot.run(key)
