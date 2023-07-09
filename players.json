@@ -68,6 +68,21 @@
     "Mid": 8,
     "Bot": 5,
     "Support": 5
+  },
+  "Lost": {
+    "Top": 4,
+    "Jungle": 2,
+    "Mid": 4,
+    "Bot": 2,
+    "Support": 2
+  },
+  "Imye": {
+    "Top": 1,
+    "Jungle": 1,
+    "Mid": 1,
+    "Bot": 7,
+    "Support": 1
   }
+
 
 }

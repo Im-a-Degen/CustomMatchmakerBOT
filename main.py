@@ -36,6 +36,13 @@ players_per_role = {
 
 @custom_bot.command()
 async def custom(ctx):
+    """Custom command to initiate role selection.
+
+    Args:
+        ctx (discord.ext.commands.Context): The context object representing the invocation of the command.
+
+    This command sends a message to the channel, allowing users to select their preferred roles by reacting to the message with the corresponding emotes.
+    """
     global role_message
     role_message = await ctx.send("Select Roles")
     for i in range(5):
@@ -44,6 +51,13 @@ async def custom(ctx):
 
 @custom_bot.command()
 async def sort(ctx):
+    """Sort command to assign players to roles and display the results.
+
+    Args:
+        ctx (discord.ext.commands.Context): The context object representing the invocation of the command.
+
+    This command assigns the players in the `players_per_role` dictionary to their respective roles using the `PlayerSorter` class. It then sends a message to the channel displaying the sorted players for each role. If there are any errors during sorting, an error message is also sent.
+    """
     # global role_message
     # get_updated_message = await ctx.fetch_message(role_message.id)
     # for r in get_updated_message.reactions:
